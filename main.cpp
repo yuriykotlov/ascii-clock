@@ -30,13 +30,13 @@ std::vector<std::vector<std::string>> numbers = {
         " ######## "
     },
  {
-        "   ##   ",
-        " ####   ",
-        "   ##   ",
-        "   ##   ",
-        "   ##   ",
-        "   ##   ",
-        "########"
+        "    ##   ",
+        " #####   ",
+        "    ##   ",
+        "    ##   ",
+        "    ##   ",
+        "    ##   ",
+        "##########"
     },
  {
         " ######## ",
@@ -135,9 +135,9 @@ std::tm get_clocktime() {
     return time;
 }
 
-void push_back_number(std::vector<int>* vec, int number) {
-    vec->push_back(number / 10);
-    vec->push_back(number % 10);
+void push_back_number(std::vector<int> &vec, int number) {
+    vec.push_back(number / 10);
+    vec.push_back(number % 10);
 }
 
 std::vector<int> get_clocktime_vector(std::tm time) {
@@ -145,29 +145,9 @@ std::vector<int> get_clocktime_vector(std::tm time) {
 
     std::vector<int> clocktime_vector{};
 
-    // push_back adds 0 if value is <10 so that the time would be 01:--:-- instead of 1:--:--
-    // to fit the format
-
-    if (time.tm_hour < 10) {
-        clocktime_vector.push_back(0);
-        clocktime_vector.push_back(time.tm_hour);
-    } else {
-        push_back_number(&clocktime_vector, time.tm_hour);
-    }
-
-    if (time.tm_min < 10) {
-        clocktime_vector.push_back(0);
-        clocktime_vector.push_back(time.tm_min);
-    } else {
-        push_back_number(&clocktime_vector, time.tm_min);
-    }
-
-    if (time.tm_sec < 10) {
-        clocktime_vector.push_back(0);
-        clocktime_vector.push_back(time.tm_sec);
-    } else {
-        push_back_number(&clocktime_vector, time.tm_sec);
-    }
+    push_back_number(clocktime_vector, time.tm_hour);
+    push_back_number(clocktime_vector, time.tm_min);
+    push_back_number(clocktime_vector, time.tm_sec);
 
     // for (int number : clocktime_vector) {
     //     std::cout << number;
@@ -180,6 +160,8 @@ std::vector<int> get_clocktime_vector(std::tm time) {
 
 void display_clocktime_art(std::vector<int> time_vector) {
     std::vector<std::vector<std::string>> clocktime_art{};
+
+    std::cout << "\033[H" << std::flush;
 
     for (int row = 0; row < MAX_ROWS_IN_NUMBER_ART; row++) {
         // make new row
@@ -205,8 +187,6 @@ void display_clocktime_art(std::vector<int> time_vector) {
 
         std::cout << full_row << std::endl;
     }
-
-    std::cout << "\033[H" << std::flush;
 }
 
 void run_clock() {
