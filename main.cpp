@@ -1,8 +1,7 @@
-#include <iostream>
 #include <thread>
 
-#include "clock_time.cpp"
-#include "terminal_display.cpp"
+#include "terminal_display.h"
+#include "clock_time.h"
 
 void run_clock() {
      while (true) {

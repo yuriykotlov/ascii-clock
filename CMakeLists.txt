@@ -8,4 +8,5 @@ add_executable(ascii_clock main.cpp
         clock_time.cpp
         clock_time.h
         terminal_display.cpp
+        terminal_display.h
 )
