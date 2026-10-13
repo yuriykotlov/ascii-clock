@@ -18,19 +18,11 @@ void push_back_number(std::vector<int> &vec, const int number) {
 }
 
 std::vector<int> get_clocktime_vector(const std::tm &time) {
-    //std::cout << "\033[H" << std::put_time(time, "%H:%M:%S") << std::flush;
-
     std::vector<int> clocktime_vector{};
 
     push_back_number(clocktime_vector, time.tm_hour);
     push_back_number(clocktime_vector, time.tm_min);
     push_back_number(clocktime_vector, time.tm_sec);
-
-    // for (int number : clocktime_vector) {
-    //     std::cout << number;
-    // }
-    //
-    // std::cout << std::endl;
 
     return clocktime_vector;
 }

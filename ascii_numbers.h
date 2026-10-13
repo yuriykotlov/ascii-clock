@@ -1,9 +1,5 @@
-//
-// Created by yuriy on 04/08/2026.
-//
-
-#ifndef ASCII_CLOCK_ASCII_ART_H
-#define ASCII_CLOCK_ASCII_ART_H
+#ifndef ASCII_NUMBERS_H
+#define ASCII_NUMBERS_H
 
 #include <array>
 #include <string_view>
@@ -117,4 +113,4 @@ inline constexpr std::array<std::array<std::string_view, MAX_ROWS_IN_NUMBER_ART>
 
 inline constexpr auto ascii_numbers_colon{ascii_numbers[ascii_numbers.size() - 1]};
 
-#endif //ASCII_CLOCK_ASCII_ART_H
+#endif //ASCII_NUMBERS_H

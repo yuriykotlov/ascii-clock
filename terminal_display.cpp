@@ -1,7 +1,3 @@
-//
-// Created by yuriy on 04/08/2026.
-//
-
 #include "ascii_numbers.h"
 #include "clock_time.h"
 
@@ -40,7 +36,7 @@ void display_clocktime_art(const std::vector<int> &time_vector) {
 
             if (number_index != 0 && number_index != MAX_CLOCKTIME_VEC_SIZE - 1 && number_index % 2 != 0) {
                 // the last item in the numbers vector is art of the ":" character
-            combined_row.append(" ").append(ascii_numbers_colon[row]);
+                combined_row.append(" ").append(ascii_numbers_colon[row]);
             }
 
             clocktime_art[row].push_back(combined_row);
