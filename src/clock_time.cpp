@@ -1,7 +1,3 @@
-//
-// Created by yuriy on 04/08/2026.
-//
-
 #include "clock_time.h"
 
 std::tm get_clocktime() {
