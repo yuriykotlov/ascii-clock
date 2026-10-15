@@ -10,9 +10,11 @@
 
 > Clone the project
 
-SSH: `git clone git@github.com:yuriykotlov/ascii-clock.git`
+```bash
+SSH: git clone git@github.com:yuriykotlov/ascii-clock.git
 
-HTTPS: `git clone https://github.com/yuriykotlov/ascii-clock.git`
+HTTPS: git clone https://github.com/yuriykotlov/ascii-clock.git
+```
 
 > Build the project. Replace 'COMPILER' with clang, gcc, or mscv.
 
@@ -24,13 +26,15 @@ cd build
 
 cmake ..
 cmake --build .
-```
 
-If you're on Windows and ``cmake ..`` doesn't work, try ``cmake .. -G "MinGW Makefiles"``
+# If `cmake ..` didn't work and you are using Windows, try:
+cmake .. -G "MinGW Makefiles"
+cmake --build .
+```
 
 
 > Run the compiled program
 
 ```bash
-./build/ascii-clock
+./ascii-clock
 ```
