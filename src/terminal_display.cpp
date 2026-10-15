@@ -32,11 +32,12 @@ void display_clocktime_art(const std::vector<int> &time_vector) {
             // gets actual time number (e.g. 1-:--:--) in time_vector, and gets it art
             std::string combined_row{};
 
-            combined_row.append(" ").append(ascii_numbers[time_vector[number_index]][row]);
+            // get the actual digit in the supplied time we want to display with [time_vector[number_index]]
+            combined_row.append(ascii_numbers[time_vector[number_index]][row]);
 
             if (number_index != 0 && number_index != MAX_CLOCKTIME_VEC_SIZE - 1 && number_index % 2 != 0) {
                 // the last item in the numbers vector is art of the ":" character
-                combined_row.append(" ").append(ascii_numbers_colon[row]);
+                combined_row.append(ascii_numbers_colon[row]);
             }
 
             clocktime_art[row].push_back(combined_row);
