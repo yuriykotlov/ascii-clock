@@ -4,7 +4,13 @@ std::tm get_clocktime() {
     const auto now = std::chrono::system_clock::now();
     const time_t now_t = std::chrono::system_clock::to_time_t(now);
     std::tm time{};
+
+#ifdef _WIN32
     localtime_s(&time, &now_t);
+#else
+    localtime_r(&now_t, &time);
+#endif
+
     return time;
 }
 
