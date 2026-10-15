@@ -28,6 +28,11 @@ cmake ..
 cmake --build .
 
 # If `cmake ..` didn't work and you are using Windows, try:
+cd ..
+rm -r build
+mkdir build
+cd build
+
 cmake .. -G "MinGW Makefiles"
 cmake --build .
 ```

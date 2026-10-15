@@ -2,7 +2,10 @@
 #include "clock_time.h"
 
 #include <iostream>
+
+#if _WIN32
 #include <windows.h>
+#endif
 
 #ifndef ENABLE_VIRTUAL_TERMINAL_PROCESSING
 #define ENABLE_VIRTUAL_TERMINAL_PROCESSING 0x0004
