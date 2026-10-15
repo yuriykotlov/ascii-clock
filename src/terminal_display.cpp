@@ -12,6 +12,7 @@
 #endif
 
 void enable_ansi_codes() {
+#if _WIN32
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     if (hConsole == INVALID_HANDLE_VALUE) return;
 
@@ -20,6 +21,7 @@ void enable_ansi_codes() {
 
     dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
     SetConsoleMode(hConsole, dwMode);
+#endif
 }
 
 void display_clocktime_art(const std::vector<int> &time_vector) {

@@ -11,9 +11,7 @@ void run_clock() {
 }
 
 int main() {
-#if _WIN32
     enable_ansi_codes();
-#endif
     run_clock();
 
     return 0;

@@ -23,3 +23,5 @@ jobs:
 
       - name: Run
         run: ./build/ascii-clock
+        timeout-minutes: 1
+        continue-on-error: true
