@@ -4,7 +4,7 @@
 
 ## Prerequisites to build
 
-> **C++20** or higher, **CMake** v3.30 or higher, and a **compiler**, being either GCC, Clang, or MSVC.
+> **C++20** or higher, **CMake** v3.20 or higher, and a **compiler**, being either GCC, Clang, or MSVC.
 
 ## Building
 
@@ -14,23 +14,23 @@ SSH: `git clone git@github.com:yuriykotlov/ascii-clock.git`
 
 HTTPS: `git clone https://github.com/yuriykotlov/ascii-clock.git`
 
-> Build the project. Replace 'COMPILER' with clang, gcc, gcc-linux, or mscv.
+> Build the project. Replace 'COMPILER' with clang, gcc, or mscv.
 
-```
+```bash
 cd ascii-clock
 
-cmake --preset COMPILER
-cmake --build build
+mkdir build
+cd build
+
+cmake ..
+cmake --build .
 ```
+
+If you're on Windows and ``cmake ..`` doesn't work, try ``cmake .. -G "MinGW Makefiles"``
+
 
 > Run the compiled program
 
-#### Windows
-```
-start ./build/ascii-clock
-```
-
-#### Linux or MacOS
-```
+```bash
 ./build/ascii-clock
 ```
